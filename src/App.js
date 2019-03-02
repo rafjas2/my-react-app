@@ -41,6 +41,16 @@ class Section extends React.Component {
   }
 }
 
+class PhotoGallery extends React.Component {
+  render() {
+    return (
+      <section id="photo-gallery">
+        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?cs=srgb&dl=action-animal-athlete-1524620.jpg&fm=jpg" />
+      </section>
+    );
+  }
+}
+
 class Footer extends React.Component {
   render() {
     return (
@@ -66,6 +76,7 @@ class App extends Component {
       <div id="wrap">
         <Header />
         <Section />
+
         <Footer />
       </div>
     );
