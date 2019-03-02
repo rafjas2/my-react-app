@@ -26,27 +26,31 @@ class Header extends React.Component {
   }
 }
 
-class Section extends React.Component {
+class FirstSearch extends React.Component {
   render() {
     return (
-      <section id="section">
+      <form id="first-search">
         <input
           id="search-box-two"
           type="search"
           velue=""
           placeholder="Search for Image"
         />
-      </section>
+      </form>
     );
   }
 }
 
-class PhotoGallery extends React.Component {
+class Gallery extends React.Component {
   render() {
     return (
-      <section id="photo-gallery">
-        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?cs=srgb&dl=action-animal-athlete-1524620.jpg&fm=jpg" />
-      </section>
+      <figure className="gallery-item">
+        <img
+          className="gallery-img"
+          src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?cs=srgb&dl=action-animal-athlete-1524620.jpg&fm=jpg"
+          alt="horse"
+        />
+      </figure>
     );
   }
 }
@@ -75,8 +79,21 @@ class App extends Component {
     return (
       <div id="wrap">
         <Header />
-        <Section />
-
+        <FirstSearch />
+        <div className="gallery">
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+          <Gallery />
+        </div>
         <Footer />
       </div>
     );
