@@ -1,25 +1,72 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import "./reset.css";
+import heroku from "./heroku2.svg";
+import github from "./github.svg";
+//let headerColor = "red";
+class Header extends React.Component {
+  render() {
+    return (
+      <header id="nav">
+        <ul>
+          <li>
+            <h1>PixSher</h1>
+          </li>
+          <li>
+            <input
+              id="search-box-one"
+              type="search"
+              velue=""
+              placeholder="Search for Image"
+            />
+          </li>
+        </ul>
+      </header>
+    );
+  }
+}
+
+class Section extends React.Component {
+  render() {
+    return (
+      <section id="section">
+        <input
+          id="search-box-two"
+          type="search"
+          velue=""
+          placeholder="Search for Image"
+        />
+      </section>
+    );
+  }
+}
+
+class Footer extends React.Component {
+  render() {
+    return (
+      <footer id="footer">
+        <div className="icons">
+          <a href="https://github.com/rafjas2/my-react-app">
+            <img src={github} alt="Heroku Logo" />
+          </a>
+        </div>
+        <div className="icons">
+          <a href="https://raf-react-app.herokuapp.com/">
+            <img src={heroku} alt="Heroku Logo" />
+          </a>
+        </div>
+      </footer>
+    );
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hello React
-          </a>
-        </header>
+      <div id="wrap">
+        <Header />
+        <Section />
+        <Footer />
       </div>
     );
   }
