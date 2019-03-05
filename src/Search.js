@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./reset.css";
-import "./Gallery.js";
 
 class Search extends Component {
   constructor(props) {
@@ -14,18 +13,19 @@ class Search extends Component {
       images: [],
       img: ""
     };
+
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ searchData: event.target.value });
   }
 
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
-    event.preventDefault();
-  }
+  //   handleSubmit(event) {
+  //     console.log("A name was submitted: " + this.state.value);
+  //     event.preventDefault();
+  //   }
 
   componentDidMount() {
     fetch(
@@ -43,15 +43,23 @@ class Search extends Component {
   render() {
     console.log(this.state.images);
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          id="search-box-center"
-          name="searchData"
-          value={this.state.searchData}
-          onChange={this.handleChange}
-          placeholder="Search for Image"
-        />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            id="search-box-center"
+            name="searchData"
+            value={this.state.searchData}
+            onChange={this.handleChange}
+            placeholder="Search for Image"
+          />
+        </form>
+        <div id="bg-img" />
+        <div className="gallery">
+          <form className="gallery-item">
+            <img className="gallery-img" src="#" alt="img" />
+          </form>
+        </div>
+      </div>
     );
   }
 }
