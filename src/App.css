@@ -12,11 +12,6 @@ html {
   width: 100%;
 }
 
-#wrap h1 {
-  font-size: 35px;
-  color: #fff;
-  font-family: "Lobster", cursive;
-}
 /*=====================Header======================*/
 
 #nav {
@@ -30,45 +25,30 @@ html {
   z-index: 2;
 }
 
-#nav ul li {
-  float: left;
-}
-
-#nav ul li:nth-child(1) {
-  width: 20%;
-  text-align: center;
+#nav h1 {
+  font-size: 35px;
+  color: #fff;
+  font-family: "Lobster", cursive;
   line-height: 50px;
+  padding-left: 30px;
 }
 
-#nav ul li:nth-child(2) {
-  margin-right: 20%;
-  width: 60%;
-}
+/*======================Search Section======================*/
 
-#search-box-one[type="search"] {
+#search-box-top[name="searchData"] {
   width: 400px;
   height: 40px;
   font-size: 20px;
-  margin: 4px auto 0 auto;
   padding-left: 10px;
   border: 2px solid #3f51b5;
   border-radius: 10px;
-  display: block;
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
 }
-
-/*======================Fitst Search Page======================*/
-
-/* #first-search {
-  width: 100%;
-  height: 100vh;
-  background-image: url("https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg?cs=srgb&dl=antique-backdrop-background-733853.jpg&fm=jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #222;
-  display: none;
-}
-
-#search-box-two[type="search"] {
+#search-box-center[name="searchData"] {
   width: 500px;
   height: 50px;
   font-size: 20px;
@@ -80,15 +60,25 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#search-box-one::placeholder,
-#search-box-two::placeholder {
+#search-box-center::placeholder,
+#search-box-top::placeholder {
   color: #999;
-} */
+}
 
-/*===================Gallery Page==================*/
+/*===================Gallery Section==================*/
+
+#bg-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg?cs=srgb&dl=antique-backdrop-background-733853.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #222;
+  display: block;
+}
 
 .gallery {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   width: 85%;
   margin: auto;
@@ -99,6 +89,7 @@ html {
   margin: auto;
   box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  display: block;
 }
 
 .gallery-img {
@@ -115,7 +106,7 @@ html {
 
 @supports (display: grid) {
   .gallery {
-    display: grid;
+    display: block;
     grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     grid-gap: 1rem;
     margin: 5.5rem auto;
