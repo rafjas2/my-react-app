@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./reset.css";
+import "./Gallery.js";
+import Gallery from "./Gallery.js";
 
 class Search extends Component {
   constructor(props) {
@@ -10,8 +12,7 @@ class Search extends Component {
       perPage: 24,
       apiUrl: "https://pixabay.com/api",
       apiToken: "11779217-a9b30eeba040492648696ebe5",
-      images: [],
-      img: ""
+      images: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,31 +36,27 @@ class Search extends Component {
     )
       .then(res => res.json())
       .then(data =>
-        this.setState({ images: data.hits, img: data.hits.largeImageURL })
+        this.setState({
+          images: data.hits
+        })
       )
       .catch(err => console.log(err));
+    event.preventDefault();
   }
 
   render() {
     console.log(this.state.images);
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            id="search-box-center"
-            name="searchData"
-            value={this.state.searchData}
-            onChange={this.handleChange}
-            placeholder="Search for Image"
-          />
-        </form>
-        <div id="bg-img" />
-        <div className="gallery">
-          <form className="gallery-item">
-            <img className="gallery-img" src="#" alt="img" />
-          </form>
-        </div>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <input
+          id="search-box-top"
+          name="searchData"
+          value={this.state.searchData}
+          onChange={this.handleChange}
+          placeholder="Search for Image"
+        />
+        <Gallery images={this.state.images} />
+      </form>
     );
   }
 }
