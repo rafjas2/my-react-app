@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./reset.css";
-import "./Gallery.js";
-import Gallery from "./Gallery.js";
+import Gallery from "./Gallery";
 
 class Search extends Component {
   constructor(props) {
@@ -16,19 +15,14 @@ class Search extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ searchData: event.target.value });
   }
 
-  //   handleSubmit(event) {
-  //     console.log("A name was submitted: " + this.state.value);
-  //     event.preventDefault();
-  //   }
-
-  componentDidMount() {
+  handleSubmit(event) {
     fetch(
       `${this.state.apiUrl}/?key=${this.state.apiToken}&q=${
         this.state.searchData
@@ -44,17 +38,31 @@ class Search extends Component {
     event.preventDefault();
   }
 
+  handleKeyPress = e => {
+    const bgImg = document.querySelector("#bg-img");
+
+    if (e.charCode === 13) {
+      bgImg.style.display = "none";
+      e.target.classList.remove("search-box-center");
+      e.target.classList.add("search-box-top");
+    }
+  };
+
   render() {
     console.log(this.state.images);
+
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} id="search-box">
         <input
-          id="search-box-top"
+          className="search-box-center"
           name="searchData"
           value={this.state.searchData}
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
           placeholder="Search for Image"
+          autoComplete="off"
         />
+
         <Gallery images={this.state.images} />
       </form>
     );

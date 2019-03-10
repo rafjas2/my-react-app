@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import "./reset.css";
 import Search from "./Search";
-//import Gallery from "./Gallery";
 import Footer from "./Footer";
 
 class App extends Component {
