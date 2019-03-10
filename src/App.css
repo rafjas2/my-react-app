@@ -31,6 +31,7 @@ html {
   font-family: "Lobster", cursive;
   line-height: 50px;
   padding-left: 30px;
+  background-color: #3f51b5;
 }
 
 /*======================Search Section======================*/
@@ -77,6 +78,35 @@ html {
   display: block;
 }
 
+#bg-img h2,
+#bg-img h3 {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bg-img h2 {
+  font-family: "Shrikhand", cursive;
+  background-color: rgb(225, 225, 225);
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(140, 103, 72, 0.2) 1px 3px 3px;
+  font-size: 60px;
+}
+
+#bg-img h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  background-color: rgb(225, 225, 225);
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(140, 103, 72, 0.2) 0px 3px 3px;
+  line-height: 33px;
+}
+
 .gallery {
   width: 85%;
   flex-wrap: wrap;
@@ -95,9 +125,9 @@ html {
   width: 23%;
   height: 250px;
   margin: 1%;
-  border: 3px solid rgba(0, 0, 0, 0.7);
-  border-radius: 5%;
-  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: -1px -1px 1px 3px rgba(0, 0, 0, 0.7);
   object-fit: cover;
   transition: transform 400ms ease-out;
   cursor: pointer;
@@ -123,6 +153,9 @@ html {
   height: 70%;
   top: 50%;
   background-color: #fff;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: -1px -1px 1px 4px rgba(255, 255, 255, 0.5);
 }
 
 .modal-img {
@@ -133,7 +166,7 @@ html {
   top: 6%;
   left: 3%;
   background-color: Red;
-  border: 4px solid rgba(0, 0, 0, 0.9);
+  border: 3px solid rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
 

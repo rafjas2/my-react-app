@@ -20,9 +20,9 @@ class Modal extends Component {
           <span className="close" onClick={this.props.onClose}>
             +
           </span>
-          <img className="modal-img" src="#" alt="glass of restretto" />
+          <img className="modal-img" src={Image.Image} alt={Image.tags} />
           <div className="user-data">
-            <img className="user-img" alt="glass of restretto" src="photo" />
+            <img className="user-img" alt={Image.user} />
             <h1>Restretto</h1>
           </div>
         </div>

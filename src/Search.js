@@ -31,7 +31,16 @@ class Search extends Component {
       .then(res => res.json())
       .then(data =>
         this.setState({
-          images: data.hits
+          images: data.hits.map(hit => {
+            console.log(data.hits);
+            return {
+              image: hit.largeImageURL,
+              id: hit.id,
+              tags: hit.tags,
+              user: hit.user,
+              userImg: hit.userImageURL
+            };
+          })
         })
       )
       .catch(err => console.log(err));
@@ -59,7 +68,7 @@ class Search extends Component {
           value={this.state.searchData}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
-          placeholder="Search for Image"
+          placeholder="Search images"
           autoComplete="off"
         />
 
