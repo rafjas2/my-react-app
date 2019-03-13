@@ -58,8 +58,6 @@ class Search extends Component {
   };
 
   render() {
-    console.log(this.state.images);
-
     return (
       <form onSubmit={this.handleSubmit} id="search-box">
         <input
