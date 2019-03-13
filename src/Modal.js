@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./reset.css";
+import icon from "./icon.svg";
 
 class Modal extends Component {
   render() {
@@ -20,10 +21,18 @@ class Modal extends Component {
           <span className="close" onClick={this.props.onClose}>
             +
           </span>
-          <img className="modal-img" src={Image.Image} alt={Image.tags} />
+          <img
+            className="modal-img"
+            src={this.props.image}
+            alt={this.props.tags}
+          />
           <div className="user-data">
-            <img className="user-img" alt={Image.user} />
-            <h1>Restretto</h1>
+            <img
+              className="user-img"
+              src={this.props.userImg ? this.props.userImg : icon}
+              alt="User"
+            />
+            <h1>By: {this.props.user}</h1>
           </div>
         </div>
       </section>

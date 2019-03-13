@@ -34,7 +34,7 @@ class Search extends Component {
           images: data.hits.map(hit => {
             console.log(data.hits);
             return {
-              image: hit.largeImageURL,
+              image: hit.webformatURL,
               id: hit.id,
               tags: hit.tags,
               user: hit.user,
