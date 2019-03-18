@@ -121,21 +121,6 @@ html {
   flex: auto;
 }
 
-.gallery-item h4 {
-  color: #fff;
-  text-align: center;
-  position: relative;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Shrikhand", cursive;
-  background-color: rgb(225, 225, 225);
-  background-clip: text;
-  color: transparent;
-  text-shadow: rgba(140, 103, 72, 0.9) 1px 3px 3px;
-  font-size: 60px;
-}
-
 .gallery-img {
   width: 23%;
   height: 250px;
@@ -182,6 +167,7 @@ html {
   left: 3%;
   border: 3px solid rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .user-data {
@@ -201,6 +187,7 @@ html {
   border: 4px solid rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   margin: 30% auto 30px;
+  object-fit: cover;
 }
 
 .user-data h1 {

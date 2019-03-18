@@ -16,6 +16,7 @@ class Search extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(event) {
@@ -69,7 +70,6 @@ class Search extends Component {
           placeholder="Search images"
           autoComplete="off"
         />
-
         <Gallery images={this.state.images} />
       </form>
     );
