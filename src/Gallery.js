@@ -33,7 +33,6 @@ class Gallery extends Component {
 
   render() {
     const { images } = this.props;
-
     return (
       <section>
         <div id="bg-img">

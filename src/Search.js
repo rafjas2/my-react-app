@@ -33,7 +33,6 @@ class Search extends Component {
       .then(data =>
         this.setState({
           images: data.hits.map(hit => {
-            console.log(data.hits);
             return {
               image: hit.webformatURL,
               id: hit.id,
@@ -44,7 +43,7 @@ class Search extends Component {
           })
         })
       )
-      .catch(err => console.log(err));
+      .catch(error => console.log(error));
     event.preventDefault();
   }
 

@@ -32,7 +32,7 @@ class Modal extends Component {
               src={this.props.userImg ? this.props.userImg : icon}
               alt="User"
             />
-            <h1>By: {this.props.user}</h1>
+            <h4>By: {this.props.user}</h4>
           </div>
         </div>
       </section>
